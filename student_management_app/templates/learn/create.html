@@ -1,0 +1,22 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'header.html' %}
+<div class="container">
+    <div class="jumbotron">
+{% if user.is_superuser %}
+<form method="POST">
+
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" class="btn btn-success">
+</form>
+{% endif %}
+        </div>
+</div>
+</body>
+</html>

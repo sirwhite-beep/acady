@@ -1,0 +1,21 @@
+{% extends 'header.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Academy Student Portal System</title>
+</head>
+<body>
+{% block content %}
+<div class="container">
+    <div class="jumbotron">
+<form method="POST" action="">
+    {% csrf_token %}
+{{register.as_p}}
+    <input type="submit" value="Post">
+    </form>
+        </div>
+</div>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,24 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'header.html' %}
+<div class="container">
+    <div class="jumbotron">
+{% if user.is_superuser %}
+<form method="POST">
+    {% csrf_token %}
+    <div class="form-control">{{ form.subject.label_tag}} {{ form.subject}}
+        {{ form.theme.label_tag}} {{ form.theme}}</div><br>
+    <div class="form-control">{{ form.topic.label_tag}} {{ form.topic}}</div><br>
+         <div class="form-control">{{ form.learning.label_tag}} {{ form.learning}}</div><br>
+        {{ form.description.label_tag}} {{ form.description}}
+    <input type="submit" class="btn btn-success">
+</form>
+{% endif %}
+    </div></div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> fee payment receipt</title>
+</head>
+<body>
+{% include 'header.html' %}
+<div class="container">
+    <div class="jumbotron">
+        <div class="jumbotron" style="background-image:url({% static 'images/about.jpg' %})"><center>PAYMENT RECEIPT</center></div>
+
+        <div class="card-body table-responsive p-0">
+                            <table class="table table-bordered text-nowrap">
+             {% for pay in payfees %}
+
+            <thead>
+            <tr>
+                 <th style="color:blue">STUDENT NAME: {{pay.student|truncatewords:3}}<br>
+                     <center style="margin-left:40px">Payment Detail</center>RECEIPT_PIN: {{pay.receipt_id}}</th>
+            </tr>
+            <tr>
+                <th>COURSE:</th>
+                <th>{{pay.course_id}}</th>
+            </tr>
+             <tr>
+                <th>AMOUNT PAID:</th>
+                <th>${{pay.amount_paid}}</th>
+            </tr>
+             <tr>
+                <th>SESSION:</th>
+                <th>{{pay.session}}</th>
+            </tr>
+             <tr>
+                <th>DATE PAID:</th>
+                <th>{{pay.date_paid}}</th>
+            </tr>
+            </thead>
+
+
+
+ {% endfor %}
+
+        </table>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% extends 'header.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Academy Student Portal System</title>
+</head>
+<body>
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+    {% for subject in subject %}
+    <div style="margin-top: 10px;">
+        <a href="{% url 'detail' subject.pk %}" style="color: yellow"> {{ subject.subject }}</a>
+    </div>
+    {%endfor %}
+{% endblock %}
+</body>
+</html>
+</body>
+</html>

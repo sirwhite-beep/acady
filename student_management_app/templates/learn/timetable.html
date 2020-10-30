@@ -1,0 +1,52 @@
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>My Academy Student Portal System</title>
+</head>
+<body>
+{% include 'header.html' %}
+<div class="container" >
+    <div class="row" >
+        <section class="col-xs-12">
+<div class="jumbotron" style="background-image: url({% static 'img/bg_3.jpg' %})">
+
+SESSION: 2020/2021<br>
+COURSE: Science | Art | Social science
+
+    <div class="card-body table-responsive p-0">
+                            <table class="table table-hover text-nowrap">
+                            <thead>
+                                <tr>
+                                <th>DAY</th>
+                                     <th></th>
+     <th>SUBJECTS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for t in table %}
+                                <tr>
+                               <th>{{t.day}}</th>
+    <th>{{t.subject1}}<br>{{t.start_time1}} - {{t.end_time1}}</th>
+
+    <th>{{t.subject2}}<br>{{t.start_time2}} - {{t.end_time2}}</th>
+                                      <th>{{t.subject3}}<br>{{t.start_time3}} - {{t.end_time3}}</th>
+                                    <th>{{t.subject4}}<br>{{t.start_time4}} - {{t.end_time4}}</th>
+
+                                </tr>
+                                {% endfor %}
+
+                            </tbody>
+                            </table>
+                        </div>
+
+    <!--/-another session-->
+
+
+</div>
+              </section>
+</div>
+
+    </div>
+
+</body>
+</html>

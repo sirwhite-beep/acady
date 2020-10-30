@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Academy Student Portal System</title>
+</head>
+<body>
+{% include 'header.html' %}
+<div class="container"  style="display:flex;justify-content:space-around; margin-top:10px" >
+{% for c in con %}
+    <div style="display:flex">
+    <div class="card">
+{{ c.name|linebreaks }}
+{{ c.email|linebreaks }}
+{{ c.comment }}
+</div>
+        </div>
+{% endfor %}
+    </div>
+</body>
+</html>
